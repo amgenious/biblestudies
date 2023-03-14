@@ -1,0 +1,20 @@
+<%- include('./partials/header.ejs') %>
+
+<body>
+    <br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 log">
+            <form action="/login" method="post">
+                <img src="/images/nubs.png" class="img-responsive"  width="50%">
+                <h1>Admin Login</h1>
+                <br>
+                <input type="text" placeholder="username" name="username" required>
+                <input type="password" placeholder="password" name="password" required>
+                <button class="btn btn-success">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<%- include('./partials/footer.ejs') %>

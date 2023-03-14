@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+<body>
+    <br>
+    <div class="container">
+    <div class="create-blog content">
+        <form action="/createblog" method="POST">
+            <img src="/images/nubs.png" class="img-responsive" width="50%">
+                <h1>Create Blog</h1>
+                <br>
+            <input type="text" id="title" name="title" placeholder="Topic" required>
+            <input type="text" id="snippet" name="snippet" placeholder="Brief Description" required>
+            <input type="text" id="date" name="date" placeholder="date" required>
+            <input type="text" id="body" name="body" placeholder="body" required>
+            <button class="btn btn-success">Create</button>
+        </form>
+    </div>
+</div>
+</body>
+<%- include('./partials/footer.ejs') %>
+</html>

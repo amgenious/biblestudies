@@ -1,0 +1,35 @@
+<%- include('./partials/header.ejs') %>
+<body>
+    <br>
+    <div class="container top">
+        <div class="row">
+            <div class="col-md-12">
+                <h1><b>Welcome to Nubs Uenr Bible Studies Blog</b></h1>
+                <hr>
+            </div>
+            <div class="col-md-12" id="disp">
+                <br>
+                <h3>All Blogs</h3>
+                <br>
+                <div class="card_content">
+                <% if (Blogs.length > 0){ %> <% Blogs.forEach(Blogs => { %>
+                <div class="card" >
+                    <a href="/blogs/<%= Blogs._id %>" class="single">
+                    <div class="card-body">
+                      <h5 class="card-title title"><b><%= Blogs.title %></b></h5>
+                      <h6 class="card-subtitle mb-2 text-muted date"><%= Blogs.date %></h6>
+                      <p class="card-text snippet"><%= Blogs.snippet %></p>
+                    </div>
+                </a>
+                </div>
+                <% }) %> <% } else{ %>
+                <p>There are no Blogs to be displayed</p>
+                <% } %>  
+            </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</body>
+
+<%- include('./partials/footer.ejs') %>

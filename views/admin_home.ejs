@@ -1,0 +1,42 @@
+<%- include('./partials/header.ejs') %>
+<body>
+    <br>
+    <div class="container" style="text-align: center;">
+        <div class="row">
+            <div class="col-md-12 admin">
+                <img src="/images/nubs.png" class="img-responsive" width="50%">
+                <h1>Welcome To Admin Dashboard.</h1>
+                <br>
+                <p ><a href="/create" class="create_route"><i>Create new blogs.</i></a></p>
+                <div class="" style="padding: auto;">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Topic</th>
+                        <th scope="col">Brief Decription</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% if (Blogs.length > 0){ %> <% Blogs.forEach(Blogs => { %>
+                      <tr>
+                        <td><%= Blogs.title %></td>
+                        <td><%= Blogs.snippet %></td>
+                        <td>
+                            <a href="/edit/<%- Blogs._id %>" style="margin-right:10px; color:yellow;"><i class="bi bi-pencil-square"></i></a>
+                            <a href="/delete/<%- Blogs._id %>" style="color: red;"><i class="bi bi-trash-fill"></i></a>
+                        </td>
+                      </tr>
+                      <% }) %> <% } else{ %>
+                        <p>There are no Blogs to be displayed</p>
+                      <% } %>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<%- include('./partials/footer.ejs') %>
